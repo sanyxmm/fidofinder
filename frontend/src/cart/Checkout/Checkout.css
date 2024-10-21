@@ -1,0 +1,90 @@
+#shipping-container{
+    width: 100vw;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+#checkout{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    padding: 1vw 3vw;
+    gap: 5vw;
+    justify-content: space-around;
+}
+
+.Shipping-details{
+    display: flex;
+    flex-direction: column;
+gap: 2.5vw;
+width: 50vw;
+/* border: 1px solid black; */
+padding: 2vw;
+/* border-radius: 10px; */
+}
+.Shipping-details h2{
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+
+.Shipping-details div input{
+   margin-right: 2vw;
+   
+}
+.Shipping-details input{
+    border-bottom: 1px solid black;
+    padding: 3px 6px;
+    /* border-radius: 2px; */
+}
+
+.inpu input{
+    width:150px;
+}
+button{
+    background-color:#3498db;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 20px;
+
+}
+
+
+.billing-details{
+    display: flex;
+    flex-direction: column;
+gap: 2.5vw;
+width: 34vw;
+/* border-left: 1px solid rgb(197, 195, 195); */
+padding: 2vw 4vw;
+/* border-radius: 10px; */
+    /* Optional: limit height to viewport */
+   
+    }
+
+    .billing-details h2{
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .grid-container {
+        /* margin-left: 60px; */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        column-gap: 10px;
+        row-gap: 5px;
+        font-size: 15px;
+      }
+
+      .cont{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        font-size: 12px;
+        text-align: center;
+        row-gap: 5px;
+        /* grid-template-rows: repeat(2, 1fr); */
+      }

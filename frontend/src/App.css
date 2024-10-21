@@ -1,0 +1,16 @@
+.App{
+    background-color:#007ab0;
+    background-color: white;
+    color: rgb(21, 22, 22);
+    overflow-x:hidden ;
+}
+#snuf{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width: 100vw;
+    height: 100vh; 
+}
+.blur-background{
+    filter:blur(2px);
+}

@@ -1,0 +1,39 @@
+
+.home{
+    /* position: relative; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(7, 7, 7, 0.8), rgba(14, 14, 14, 0.8)), url(../../assets/amnpreet.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:#fffaf3;
+    background-position: center;
+}
+.home div{
+    font-size: 5vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.home button:hover{
+    background-color: #57b257;
+    color: aliceblue;
+}
+
+@media (min-width:680px){
+.home div{
+    width: 60vw;
+    font-size: 3vw;
+}
+}
+
+.login-pos{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

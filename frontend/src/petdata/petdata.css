@@ -1,0 +1,33 @@
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    font-size: 1vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+   /* background blur */
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: initial;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .image{
+    background: url(../assets/oggy.jpg);
+    background-size: 100% 35%;
+    background-repeat: no-repeat;
+    background-color:white;
+    background-position: top;
+  }
+  
+  .image2{
+    background: url(../assets/oggy.jpg);
+    background-size: 100% 28%;
+    background-repeat: no-repeat;
+    background-color:white;
+    background-position: top;
+  }
+  

@@ -1,0 +1,86 @@
+
+.container{
+    position: relative;
+    height: 90vh;
+    width: 100vw;
+    background-color:#fffaf3;
+    /* display: flex; */
+  }
+  #dog-image {
+    display: none;
+  }
+  .sticker{
+    height: 80vh;
+    border-bottom-left-radius: 100vw;
+    border-bottom-right-radius: 100vw;
+    background-image: url(../../assets/b.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .s-content{
+    position: absolute;
+    width: 70vw;
+    bottom: 8vh;
+    left: 15vw;
+    color: aliceblue;
+    text-align: center;
+  }
+  .s-content h1{
+    font-size: 10vw;
+    font-weight: 600;
+  }
+  .s-content h6{
+    font-size: 6vw;
+    font-weight: 100;
+  }
+  
+  .s-content button{
+    margin-top: 2vw;
+    padding: 1.9vw 6vw 1.9vw 6vw;
+    font-size: 4vw;
+    border-radius: 4vw;
+    border: none;
+    color: aliceblue;
+    background-color: #15425c;
+  }
+  
+  .s-content button:hover{
+    background-color: #03567f;
+    border: 1px solid black;
+  }
+  
+  @media (min-width: 680px){
+   .container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+   justify-content: space-evenly;
+   }
+   #dog-image{
+    display: block;
+   }
+   .sticker{
+    display: none;
+   }
+   .s-content{
+    margin-top: 10vw;
+    position: static;
+    width: 30vw;
+    color: black;
+  }
+  .s-content h1{
+    font-size: 5vw;
+  }
+  .s-content h6{
+    font-size: 3vw;
+  }
+  .s-content button{
+    margin-top: 2vw;
+    padding: 1vw 3vw 1vw 3vw;
+    font-size: 1.5vw;
+  }
+  
+  }
