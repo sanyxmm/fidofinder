@@ -9,7 +9,7 @@ const authenticate = async(req, res, next) => {
     //   console.log("Cookies", req.cookies.token);
     //   console.log("Header", req.header("Authorization"));
 
-      const token = req.body.token || req.cookies.token || req.header("Authorization").replace("Bearer ", "");
+      const token = req.body.token || req.cookies.token ;
 
       if(!token || token === undefined) {
           return res.status(401).json({
@@ -50,7 +50,7 @@ const authenticate = async(req, res, next) => {
       console.log(err)
       return res.status(401).json({
           success: false,
-          message: "Something went wrong while verifying token"
+          message: "Please Login to Continue"
       })
   }
 }

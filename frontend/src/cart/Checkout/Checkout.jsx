@@ -1,18 +1,20 @@
-import React, { useContext,useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './Checkout.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AddPet from '../../petdata/add-pet';
 import { useDispatch, useSelector } from 'react-redux';
-import {setaddtag} from '../../StateMangement/cartSlice';
+import {setaddtag, setshippingDetails} from '../../StateMangement/cartSlice';
 
 const Checkout = () => {
-  const dispatch = useDispatch();
-  const {addtag}  = useSelector((state) => state.pawtag);
-  const { isCartOpen, cartItems } = useSelector((state) => state.cart); 
+  const [error,setError] = useState("");
+  const {addtag,petDetails}  = useSelector((state) => state.pawtag);
+  const { isCartOpen, cartItems,shippingDetails } = useSelector((state) => state.cart); 
   const cartTotal = cartItems.map(item => item.price * item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
-  const [error, setError] = useState("");
-  const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+
+  //setting shipping details
+  const [formData, setformData] = useState({
     Firstname:"",
     LastName:"",
     Address:"",
@@ -24,47 +26,72 @@ const Checkout = () => {
     Zipcode:"",
     EmailAddress:"",
   });
-  // const navigate = useNavigate()
-  Axios.defaults.withCredentials = true;
-  const handleSubmit = (e) => {
-    e.preventDefault(); //prevent default submission if u donst wrtie this u will face with error
-
-    //axios is http request response library to go call our server side up
-    //using post method to pass the data
-    //here we write server side app url
-    Axios.post("http://localhost:4000/shipping/add-Shipping", formData)
-      .then((response) => {
-        console.log(formData);
-        if (response.data.status)
-        dispatch(setaddtag(true));
-        else setError(response.data.message);
-        dispatch(setaddtag(true));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
   const handleChange = (e) => {
-    setFormData({
+    setformData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault(); //prevent default submission if u donst wrtie this u will face with error
+    dispatch(setshippingDetails(formData));
+    dispatch(setaddtag(true));
+  };
+
+
+  //setting order details
+  const orderData = {
+    items: cartItems,
+    shippingAddress: shippingDetails,
+    totalAmount:cartTotal,
+    petDetails:petDetails
+};
+
+//sending order details to database
+  Axios.defaults.withCredentials = true;
+  const handlePlaceOrder = (e) => {
+    console.log(orderData)
+    e.preventDefault();
+    Axios.post("http://localhost:4000/placeOrder", orderData)
+    .then((response) => {
+      navigate('/Findmydog');
+      console.log(orderData);
+      alert(response.data.message)
+      setError(response.data.message);
+      
+    })
+    .catch((error) => {
+      console.log(error);
+      alert(error.response.data.message);
+      setError(error.response.data.message);
+    });
+};
+
+
   return (
-   <div id='shipping-container'>
+  <div id='shipping-container'>
     
-  <Link to="/Findmydog"><img src={require('../../assets/back-button (2).png')} className='absolute mt-4 ml-4 w-10' alt="" /></Link>
+      <Link to="/Findmydog"><img src={require('../../assets/back-button (2).png')} className='absolute mt-4 ml-4 w-10' alt="" /></Link>
+
+     {/* header*/}
      <div className="flex items-center gap-7 w-[30vw] ml-[35vw] pt-[3vw]">
    <div>Cart</div>
    <div className="w-1/2 h-px bg-gray-300 "></div>
    <div className='font-[700]'>Shipping</div>
    <div className="w-1/2 h-px bg-gray-300"></div>
    <div>Payment</div>
- </div>
-     <div id='checkout'>
-  {addtag && <AddPet/>}
+     </div>
 
-       <form onSubmit={handleSubmit} className="Shipping-details">
+     {/* checkoutpage */}
+    <div id='checkout'>
+
+        {/* petTagPop */}
+        {addtag && <AddPet/>}
+
+
+        {/* shipping details */}
+        <form onSubmit={handleSubmit} className="Shipping-details">
        <h2>Shipping-details</h2>
 
        <div>
@@ -89,8 +116,9 @@ const Checkout = () => {
       </div>
       {/* {error ? <p style={{ color: 'red' }}>{error}</p>:<p><br /></p>} */}
  <button type='submit'>Click Here to Enter Pet Details</button>
-      </form>
+       </form>
 
+        {/* Billing details */}
         <div className="billing-details">
       <h2>Billing-details</h2>
       {
@@ -119,12 +147,16 @@ const Checkout = () => {
   <div class="grid-item"><span className='text-[18px] font-bold'>₹ {cartTotal.toLocaleString()}</span></div>
 </div>
 
-      <button>Place Order</button>
+
+      <button onClick={handlePlaceOrder}>Place Order</button>
+      {error ? <p className='text-red-500 mb-[-3]'>{error}</p>:<p><br /></p>}
+
+
         </div>
 
+    </div>
 
-     </div>
-   </div>
+  </div>
   )
 }
 

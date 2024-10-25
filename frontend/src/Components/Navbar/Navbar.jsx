@@ -8,7 +8,7 @@ import ForgotPassword from "../../Auth/ForgotPassword";
 import Axios from "axios";
 import SearchPet from "../../petdata/SearchPet";
 import { useDispatch, useSelector } from 'react-redux';
-import {setlogin,setlogchk,setlogoutpop,setNav} from '../../StateMangement/cartSlice';
+import {setlogin,setlogchk,setlogoutpop,setNav,setlogPop,setregPop} from '../../StateMangement/cartSlice';
 import { toggleCart } from '../../StateMangement/cartSlice';
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
   let buttonClasses = classNames("navbtns", navbtns ? "set" : "");
   const [formData, setformData] = useState({});
   useEffect(() => {
-    Axios.get(`http://localhost:4000/auth/user-details`)
+    Axios.get(`http://localhost:4000/user-details`)
       .then((response) => {
         const formData = response.data.user;
         setformData(formData);
@@ -32,11 +32,42 @@ const Navbar = () => {
         console.log(err);
       });
   });
+
+
   const handleLogout = () => {
-    localStorage.removeItem("token-info"); // remove the token from LocalStorage
-    dispatch(setlogchk(false)); // update the loggedin state
-    dispatch(setlogoutpop(true));
-  };
+    Axios.post('http://localhost:4000/logout')
+        .then(response => {
+            if (response.data.status) {
+                dispatch(setlogin(false)); // Update the login state
+                dispatch(setlogchk(false)); // update the loggedin state
+                dispatch(setlogoutpop(true));
+                // localStorage.removeItem("token-info"); // Clear any token in local storage
+            } else {
+                console.log('Logout failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error during logout:', error);
+        });
+};
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(setlogPop(false));
+    }, 1000);
+  }, [logPop]);
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(setlogoutpop(false));
+    }, 1000);
+  }, [logout]);
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(setregPop(false));
+    }, 2000);
+  }, [regPop]);
+  
   return (
     <nav className="navbar">
       <img id="logo" src={require('../../assets/logo.png')} alt="" />

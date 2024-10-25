@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
-import productsData from '../../StateMangement/productsData';
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios';
 import ProductsCard from './ProductsCard';
 import '../Shopping/ShopSection.css'
 const ShopSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [productsData,setproductsData] = useState([]);
+  useEffect(()=>{
+    Axios.get(`http://localhost:4000/allProducts`)
+    .then((response) => {
+      const formData = response.data.products;
+      setproductsData(formData)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  },[]);
+
+
 
   const handleScroll = (direction) => {
     const container = document.getElementById('product-container');
@@ -13,7 +27,6 @@ const ShopSection = () => {
 
     setScrollPosition(container.scrollLeft);
   };
-
   return (
     <>
       <section className="relative flex flex-col items-center pr-10 pl-10 pt-20 pb-20">
@@ -32,8 +45,8 @@ const ShopSection = () => {
             </button>
             <div className="flex flex-row gap-x-4 max-w-[1100px]">
             {productsData.map((item) => (
-              <ProductsCard key={item.id} {...item} />
-            ))}
+  <ProductsCard key={item._id} {...item} />
+))}
             <button
               className="absolute top-[400px] right-2 transform -translate-y-1/2 z-10 bg-opacity-50 border-none p-2 cursor-pointer text-[30px] pt-3.5 pb-4 px-6 py-6 rounded-full bg-gray-300"
               onClick={() => handleScroll('right')}

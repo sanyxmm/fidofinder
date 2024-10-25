@@ -10,7 +10,7 @@ const SearchPet  = ({code}) => {
  const dispatch = useDispatch();
   const [formData,setformData] =useState({});
   useEffect(()=>{
-    Axios.get(`http://localhost:4000/pet/search-pet/${code}`)
+    Axios.get(`http://localhost:4000/search-pet/${code}`)
     .then((response) => {
       const formData = response.data.pet;
       setformData(formData)

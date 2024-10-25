@@ -23,7 +23,7 @@ const ForgotPassword = () => {
     //axios is http request response library to go call our server side up
     //using post method to pass the data
     //here we write server side app url
-    Axios.post('http://localhost:4000/auth/forgot-password',formData).then(response =>{
+    Axios.post('http://localhost:4000/forgot-password',formData).then(response =>{
        
         if(response.data.status)
         setError("check ur email for saved password link")

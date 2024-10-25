@@ -22,7 +22,7 @@ const Cart = () => {
 
     }, [isCartOpen]);
 
-    const cartQuantity = cartItems.length;
+    const cartquantity = cartItems.length;
     const cartTotal = cartItems.map(item => item.price * item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
 
 
@@ -35,21 +35,21 @@ const Cart = () => {
                         <div className="absolute top-0 right-0 max-w-[370px] w-full h-full bg-[#f5f9fc]">
                     <div className='p-[1rem] text-center text-white bg-[#3498db] font-extrabold  text-[1.2rem]'>
 
-                                <h2>Cart <small>({cartQuantity})</small></h2>
+                                <h2>Cart <small>({cartquantity})</small></h2>
                                
                     </div>
 
                             <div className="cart_body">
                                 {
-                                    cartQuantity === 0 ? (
+                                    cartquantity === 0 ? (
                                         <h2>Cart is empty</h2>
                                     ) : (
                                         cartItems.map(item => {
-                                            const { id, img, title, price, quantity } = item;
+                                            const { _id, title, price, quantity,img } = item;
                                             const itemTotal = price * quantity;
 
                                             return (
-                                                <div className="cart_items" key={id}>
+                                                <div className="cart_items" key={_id}>
                                                     <figure className="cart_items_img">
                                                         <img src={img} alt="product-img" />
                                                     </figure>
@@ -60,15 +60,15 @@ const Cart = () => {
                                                     </div>
 
                                                     <div className="cart_items_quantity">
-                                                        <span onClick={() => dispatch(decrementItem(id))}>&#8722;</span>
+                                                        <span onClick={() => dispatch(decrementItem(_id))}>&#8722;</span>
                                                         <b>{quantity}</b>
-                                                        <span onClick={() => dispatch(incrementItem(id))}>&#43;</span>
+                                                        <span onClick={() => dispatch(incrementItem(_id))}>&#43;</span>
                                                     </div>
 
                                                     <div
                                                         title="Remove Item"
                                                         className="cart_items_delete"
-                                                        onClick={() =>   dispatch(removeItem(id))}
+                                                        onClick={() =>   dispatch(removeItem(_id))}
                                                     >
                                                         <span>&times;</span>
                                                     </div>
@@ -89,7 +89,7 @@ const Cart = () => {
                                     type="button"
                                     className="checkout_btn"
                                     
-                                    disabled={cartQuantity === 0}
+                                    disabled={cartquantity === 0}
                                 >
                                <Link to="/shipping">Checkout</Link>
                             </button>

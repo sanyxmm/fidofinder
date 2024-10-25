@@ -20,7 +20,7 @@ const handleSubmit = (e) => {
   //axios is http request response library to go call our server side up
   //using post method to pass the data
   //here we write server side app url
-  Axios.post('http://localhost:4000/auth/signup',formData).then(response =>{
+  Axios.post('http://localhost:4000/signup',formData).then(response =>{
     console.log(formData);
       if(response.data.status){
         dispatch(setsignup(true));

@@ -5,6 +5,8 @@ const cartinitialState = {
     isCartOpen: false,
     isCheckoutOpen :false,
     cartItems: [],
+    shippingDetails:{},
+    cartTotal:""
 };
 const cartSlice = createSlice({
     name: 'cart',
@@ -12,10 +14,12 @@ const cartSlice = createSlice({
     reducers: {
         toggleCart(state, action) { state.isCartOpen = action.payload},
         toggleCheckout(state, action) {state.isCheckoutOpen = action.payload},
+        setshippingDetails(state, action) {state.shippingDetails = action.payload},
+        setcartTotal(state, action) {state.cartTotal = action.payload},
 
         addItem(state, action) {
-            const newItemId = action.payload.id;
-            const existingItem = state.cartItems.find(item => item.id === newItemId);
+            const newItemId = action.payload._id;
+            const existingItem = state.cartItems.find(item => item._id === newItemId);
 
             if (existingItem) {
                 existingItem.quantity++;
@@ -26,13 +30,13 @@ const cartSlice = createSlice({
 
 
         removeItem(state, action) {
-            state.cartItems = state.cartItems.filter(item => item.id !== action.payload);
+            state.cartItems = state.cartItems.filter(item => item._id !== action.payload);
         },
 
 
         incrementItem(state, action) {
             state.cartItems = state.cartItems.map(item => {
-                if (item.id === action.payload) {
+                if (item._id === action.payload) {
                     item.quantity++;
                 }
                 return item;
@@ -42,7 +46,7 @@ const cartSlice = createSlice({
 
         decrementItem(state, action) {
             state.cartItems = state.cartItems.map(item => {
-                if (item.id === action.payload) {
+                if (item._id === action.payload) {
                     item.quantity--;
                 }
                 return item;
@@ -81,6 +85,7 @@ const authSlice = createSlice({
 });
 
 const pawinititalState = {
+    petDetails:{},
     searchtag:false,
     addtag:false,
     code:"",
@@ -89,6 +94,7 @@ const pawSlice = createSlice({
     name:'pawtag',
     initialState:pawinititalState,
     reducers:{
+        setpetDetails(state,action) {state.petDetails = action.payload},
         setsearchtag(state, action) { state.searchtag = action.payload},
         setaddtag(state, action) { state.addtag = action.payload},
         setcode(state, action) { state.code = action.payload},
@@ -96,9 +102,9 @@ const pawSlice = createSlice({
 })
 
 
-export const { toggleCart,toggleCheckout, addItem, removeItem, incrementItem, decrementItem } = cartSlice.actions;
+export const { toggleCart,toggleCheckout, addItem, removeItem, incrementItem, decrementItem ,setshippingDetails,setcartTotal} = cartSlice.actions;
 export const {setlogin,setsignup,setforgot,setreset,setlogchk,setlogPop,setlogoutpop,setregPop,setNav} =authSlice.actions;
-export const {setcode,setaddtag,setsearchtag}=pawSlice.actions;
+export const {setpetDetails,setcode,setaddtag,setsearchtag}=pawSlice.actions;
 
 export const cartReducer = cartSlice.reducer;
 export const authReducer = authSlice.reducer;
