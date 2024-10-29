@@ -1,0 +1,17 @@
+@media (max-width:680px){
+  .card{
+    height: 30vh;
+    min-width: 16.5vh;
+    padding: 10px;
+    font-size: 8px;
+    line-height: 1rem;
+  }
+  .card figure{
+    height:17vh;
+  }
+  .card button{
+    padding: 1px 17px 1px 17px;
+    font-size: 8px;
+    border-radius: 2px;
+  }
+}

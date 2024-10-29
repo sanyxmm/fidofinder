@@ -3,6 +3,7 @@
     width: 100vw;
     height: auto;
     font-size: 2vw;
+    font-weight:700;
     padding: 4vw;
     background-image: url(../../assets/pexelsphoto3452072.jpeg);
     display: flex;
@@ -12,6 +13,6 @@
 }
 @media (max-width: 680px) {
     .Quote h1{
-        font-size: 4vw;
+        font-size: 2.5vw;
     }
 }

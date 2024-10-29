@@ -8,3 +8,33 @@
 #product-container::-webkit-scrollbar {
     display: none;
   }
+
+
+@media (max-width:680px){
+    .shopsec{
+        padding-top: 2rem;
+    }
+  .shopsec-h{
+    font-size: 25px;
+    padding-bottom:1rem;
+  }  
+  .shopsec-d{
+    row-gap: 5px;
+  }
+  .product-container{
+    width: 90vw;
+    column-gap: 7px;
+  }
+  .leftarr{
+top: 154px;
+padding: 0;
+font-size: 15px;
+padding: 1px 5px;
+  }
+  .rightarr{
+top: 154px;
+padding: 0;
+font-size: 15px;
+padding: 1px 5px;
+  }
+}

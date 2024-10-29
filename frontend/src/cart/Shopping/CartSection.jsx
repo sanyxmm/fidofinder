@@ -33,6 +33,7 @@ const Cart = () => {
                     <div className='fixed top-0 left-0 z-50 w-full h-screen bg-black bg-opacity-30'>
                          <OutsideClickHandler onOutsideClick={() => dispatch(toggleCart(false))}>
                         <div className="absolute top-0 right-0 max-w-[370px] w-full h-full bg-[#f5f9fc]">
+                        <img onClick={() => dispatch(toggleCart(false))} src={require('../../assets/icons8-go-back-48.png')} className='absolute mt-3 ml-2 w-10' alt="" />
                     <div className='p-[1rem] text-center text-white bg-[#3498db] font-extrabold  text-[1.2rem]'>
 
                                 <h2>Cart <small>({cartquantity})</small></h2>

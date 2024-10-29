@@ -1,82 +1,13 @@
-/* .page5{
-    height: 100vh;
-    width: 100vw;
-    background-image: url(HankPortrait1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: #f3f3f3e6;
-    display: flex;
-    font-size: 2.5vw;
-    flex-direction:row;
-   padding-left: 50vw;
-    align-items: center;
-    background-color: #f3f3f3;
-}
-.search{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    font-size: 3vw;
-}
-
-#here{
-    margin-top:2vw;
-    font-size: 15px;
-    padding: 12px;
-    width: 33vw;
-    height: 3vw;
-    border-radius:7px;
-    z-index: 1;
-} */
-
-/* .page5{
-    height: 100vh;
-    width: 100vw;
-    background-image: url(abt-section.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color:#fffaf3;
-    display: flex;
-    font-size: 3vw;
-    flex-direction:row;
-   padding-left: 50vw;
-    align-items: center;
-}
-.search{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    font-size: 3vw;
-}
-
-#here{
-    margin-top:2vw;
-    font-size: 15px;
-    padding: 12px;
-    width: 33vw;
-    height: 3vw;
-    border-radius:7px;
-    z-index: 1;
-}
-.findme{
-    display: none;
-} */
 #dogboy{
     width: 80vw;
 }
-
 .findme{
-    /* background-color:#fffaf3; */
     position: relative;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 20vw 0vw 0vw 0px;
-    /* backdrop-filter: blur(3px); */
    overflow: hidden;
 }
 #image{
@@ -100,31 +31,38 @@
     padding:1.5vw;
     border-radius: 5vw;
     width: 60vw;
+    border: 1.5px solid black;
 }
 .find-search button {
     height: 7vw;
     width: 7vw;
     border-radius: 5vw;
     border: none;
+    font-size: 4vw;
+    background-color: transparent;
 }
 .find-search button i {
     font-size: 4vw;
+    color: black;
+}
+.find-search button i:hover{
+    font-size: 4.5vw;
+    background-color: transparent;
 }
 #findme-heading{
     font-size: 6vw;
+    font-weight: 700;
 }
+
 @media (min-width:680px){
+
+    #dogboy{
+        width: 50vw;
+    }
 .findme{
-    width: 100vw;
-    display: flex;
     flex-direction: row-reverse;
     justify-content: space-evenly;
-    align-items: center;
     padding: 0vw;
-   overflow: hidden;
-}
-#dogboy{
-    width: 50vw;
 }
 .findme div div{
     font-size: 1.5vw;
@@ -136,31 +74,22 @@
     margin-top: 4vw;
     font-size: 1.2vw;
     padding:0.8vw;
-    border-radius: 5vw;
     width: 30vw;
-    border: 1.5px solid black;
 }
 .find-search button {
     height: 3.3vw;
     width: 3.3vw;
+    font-size: 2vw;
     border-radius: 5.5vw;
-    border: none;
-    background-color: transparent;
-}
-.find-search button {
-    font-size: 2vw;
-    background-color: transparent;
-}
-.find-search button i:hover{
-    font-size: 2vw;
-    background-color: transparent;
 }
 
 .find-search button i {
     font-size: 1.5vw;
-    color: black;
+}
+.find-search button i:hover{
+    font-size: 2vw;
 }
 #findme-heading{
-    font-size: 3vw;
+    font-size: 2.7vw;
 }
 }

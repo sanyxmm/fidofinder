@@ -1,12 +1,15 @@
 import React from 'react'
 import './PetRegistration.css'
+import { setaddtag } from '../../StateMangement/cartSlice'
 import { useDispatch,useSelector } from 'react-redux'
+import AddPet from '../../petdata/add-pet'
 const PetRegistration = () => {
   const dispatch = useDispatch();
-  const {setaddtag}  = useSelector((state) => state.pawtag);
+  const {addtag}  = useSelector((state) => state.pawtag);
   return (
-<div>
-<div className="container">
+<div className='petreg'>
+<div className="container relative">
+{addtag && <AddPet/>}
     <div className='sticker'></div>
   <img id="dog-image" src={require("../../assets/dogyy.png")} alt="" />
      <div className='s-content'>

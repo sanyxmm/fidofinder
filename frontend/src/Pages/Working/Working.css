@@ -6,6 +6,7 @@
   #heading {
     font-size: 5vw;
     padding: 5vw 0 2vw;
+    font-weight: 800;
     text-align: center;
   }
   .page4 {
@@ -32,6 +33,7 @@
   }
   .page4 div h3 {
     text-align: center;
+    font-weight: 800;
     padding-bottom: 0.5vw;
   }
   .page4 div img {

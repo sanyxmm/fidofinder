@@ -15,34 +15,20 @@
 }
 
 .Shipping-details{
-    display: flex;
-    flex-direction: column;
-gap: 2.5vw;
+display: flex;
+flex-direction: column;
+gap: 2vw;
 width: 50vw;
-/* border: 1px solid black; */
 padding: 2vw;
-/* border-radius: 10px; */
 }
 .Shipping-details h2{
-
     font-size: 25px;
     font-weight: 700;
-}
-
-
-
-.Shipping-details div input{
-   margin-right: 2vw;
-   
 }
 .Shipping-details input{
     border-bottom: 1px solid black;
     padding: 3px 6px;
-    /* border-radius: 2px; */
-}
-
-.inpu input{
-    width:150px;
+    min-width: 10px;
 }
 button{
     background-color:#3498db;
@@ -57,15 +43,10 @@ button{
 .billing-details{
     display: flex;
     flex-direction: column;
-gap: 2.5vw;
-width: 34vw;
-/* border-left: 1px solid rgb(197, 195, 195); */
-padding: 2vw 4vw;
-/* border-radius: 10px; */
-    /* Optional: limit height to viewport */
-   
-    }
-
+    gap: 2.5vw;
+    width: 34vw;
+    padding: 2vw 4vw;
+}
     .billing-details h2{
         font-size: 25px;
         font-weight: 700;
@@ -88,3 +69,36 @@ padding: 2vw 4vw;
         row-gap: 5px;
         /* grid-template-rows: repeat(2, 1fr); */
       }
+
+
+
+      @media(max-width:680px){
+        #checkout{
+            flex-direction: column;
+        }
+        .inputsgap{
+            row-gap: 8px;
+            column-gap: 8px;
+        }
+        .Shipping-details{
+            width: 95vw;
+            gap: 4vw;
+            font-size: 12px;
+        }
+         .Shipping-details input{
+            padding: 4px 8px;
+            border-radius: 2px;
+            border: 1px solid black;
+
+         }
+         .billing-details{
+            flex-direction: column;
+            width: 90vw;
+            padding: 2vw 4vw;     
+        }
+        .header{
+            display: none
+        }
+
+      }
+

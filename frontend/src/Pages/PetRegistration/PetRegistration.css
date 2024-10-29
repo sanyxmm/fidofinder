@@ -1,4 +1,10 @@
-
+.petreg{
+  display: none;
+}
+@media (max-width: 680px){
+  .petreg{
+    display: block;
+  }
 .container{
     position: relative;
     height: 90vh;
@@ -49,8 +55,8 @@
   .s-content button:hover{
     background-color: #03567f;
     border: 1px solid black;
-  }
-  
+  }}
+/*   
   @media (min-width: 680px){
    .container{
     height: 100vh;
@@ -83,4 +89,4 @@
     font-size: 1.5vw;
   }
   
-  }
+  } */

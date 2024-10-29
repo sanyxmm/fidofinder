@@ -36,13 +36,14 @@ const AddPet = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen w-screen absolute left-0 top-0 bg-auto backdrop-blur-[4px]">
+    <div className="flex justify-center items-center h-screen w-screen absolute left-0 top-0 bg-auto backdrop-blur-[4px] z-20">
       <OutsideClickHandler onOutsideClick={() => dispatch(setaddtag(false))}>
         <form
           onSubmit={handleSubmit}
           className="relative w-[290px] p-[20px_15px] border border-gray-300 rounded-md shadow-md backdrop-blur-sm image2 "
         >
-          {/* <img src={arrow} alt="" width={'25px'}  class='absolute top-3 left-3 '/> */}
+      <img onClick={() => dispatch(setaddtag(false))} src={require('../assets/icons8-go-back-48.png')} className='absolute mt-[-12px] ml-[-8px] w-[1.5rem]' alt="" />
+
           <div class="text-[10px] p-[15px] mx-0 mb-[15px] mt-[15px] rounded-md bg-white shadow-md">
             <div class="flex flex-row gap-[7px]">
               <img class="rounded-[15px]" src={require("../assets/doggy.jpg")} alt="" width={"60px"} />

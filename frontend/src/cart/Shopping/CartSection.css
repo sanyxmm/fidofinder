@@ -47,6 +47,7 @@
 
 .cart_items img{
     width: 60px;
+    height:90px;
 }
 
 
@@ -128,4 +129,10 @@
         opacity: 0.5;
         cursor: not-allowed;
     } */
+}
+
+@media (max-width:680px){
+    .cart_items {
+        gap: 1rem;
+    }
 }

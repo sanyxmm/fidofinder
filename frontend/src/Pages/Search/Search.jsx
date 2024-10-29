@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { setsearchtag,setcode,setpetData } from '../../StateMangement/cartSlice'
+import { useDispatch, useSelector} from "react-redux";
+import Axios from 'axios';
 import './Search.css'
-import { useDispatch} from 'react-redux';
-import {setsearchtag,setcode } from '../../StateMangement/cartSlice';
 const Search = () => {
   const dispatch = useDispatch();
+  const {code,petData} = useSelector((state) => state.pawtag);
+
   return (
   <div className='findme'>
     <div id='content-find'> 
@@ -16,12 +19,9 @@ const Search = () => {
       <div className='find-search'>
       <label ><input  type="text" placeholder='Search Pet-id '  onChange={(e) => dispatch(setcode(e.target.value))}
  /> </label>
-      <button  onClick={() => dispatch(setsearchtag(true))}><i className="fa-solid fa-magnifying-glass"></i></button>
+      <button  onClick={()=>dispatch(setsearchtag(true))}><i className="fa-solid fa-magnifying-glass"></i></button>
       </div>
-     
-      
     </div>
-    <div>&nbsp;</div>
     <div>&nbsp;</div>
     <img src={require('../../assets/abt-section.png')} alt="" id='dogboy' />
  

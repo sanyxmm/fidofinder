@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../StateMangement/cartSlice';
-
+import './ProductsCard.css'
 const ProductsCard = (props) => {
     const { img, rating, title, price } = props;
     const [isAdded, setIsAdded] = useState(false);
@@ -22,9 +22,9 @@ const ProductsCard = (props) => {
 
 
     return (
-            <div className="flex flex-col justify-center items-center p-5  min-w-[260px] h-[430px] bg-gray-100 rounded-md">
+            <div className="card flex flex-col justify-center items-center p-5  min-w-[260px] h-[430px] bg-gray-100 rounded-md text-base">
                 <figure className='h-[250px]'>
-                    <img  src={img} className='h-[250px]' alt="item-img" />
+                    <img  src={img} className='h-[100%]' alt="item-img" />
                 </figure>
                 <strong className="rating1">{rating}</strong>
                 <h4 className="title1">{title}</h4>

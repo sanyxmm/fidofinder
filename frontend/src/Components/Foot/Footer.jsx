@@ -2,41 +2,11 @@ import React from 'react'
 import './Footer.css'
 const Footer = () => {
   return (
-  <div  class="bg-gray-100">
- 
-    {/* <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
-        <div class="p-5">
-            <h3 class="font-[900] text-[30px] text-[#3498db]">Pawquest</h3>
-        </div>
-        <div class="p-5">
-            <div class="text-sm uppercase text-[#3498db] font-bold">Resources</div>
-            <a class="my-3 block" href="/#">Documentation <span class="text-teal-600 text-xs p-1"></span></a><a
-                class="my-3 block" href="/#">Tutorials <span class="text-teal-600 text-xs p-1"></span></a><a
-                class="my-3 block" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
-        </div>
-        <div class="p-5">
-            <div class="text-sm uppercase text-[#3498db] font-bold">Support</div>
-            <a class="my-3 block" href="/#">Help Center <span class="text-teal-600 text-xs p-1"></span></a><a
-                class="my-3 block" href="/#">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a><a
-                class="my-3 block" href="/#">Conditions <span class="text-teal-600 text-xs p-1"></span></a>
-        </div>
-        <div class="p-5">
-            <div class="text-sm uppercase text-[#3498db] font-bold">Contact us</div>
-            <a class="my-3 block text-[10px]" href="/#">
-            <span class="text-teal-600 text-s p-1 ">Lodha Vista ,Apartments Opp. Shri Shantinath Jain Temple, Sitaram Jadhav Marg, Near High Street Phoenix, Mumbai ·</span>
-            </a>
-            <a class="my-3 block" href="/#">
-                <span class="text-teal-600 text-xs p-1">findurpaw@pawquest.com</span> 
-            </a>
-            <a class="my-3 block" href="/#">
-                <span class="text-teal-600 text-xs p-1">084927378431</span> 
-            </a>
-        </div>
-    </div> */}
-
+ <div>
+     <div  class="bg-gray-100">
 <section>
-    <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-        <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+    <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 ">
+        <nav class="flex flex-wrap justify-center -mx-5 -my-2 ">
             <div class="px-5 py-2">
                 <a href="#" class="text-base leading-6 text-gray-800 hover:text-gray-900">
                     About
@@ -106,6 +76,8 @@ const Footer = () => {
     </div>
 </section>
   </div>
+
+ </div>
    
   )
 }

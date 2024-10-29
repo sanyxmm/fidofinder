@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     }
-    .open{
+    /* .open{
         display: none;
        } 
     .navbar {
@@ -25,9 +25,6 @@
     }
     
     #nav-button{
-        /* position: absolute;
-        top: 1.6vw;
-        right: 5vw; */
         padding: 0.35vw 1vw 0.35vw 1vw;
         font-size: 1.3vw;
         background-color: rgb(46, 44, 44);
@@ -87,10 +84,10 @@
         .navbar{
             flex-direction: column;
             align-items: flex-start;
-            background-color: white;
+            background-color: white; */
             /* backdrop-filter: blur(2px); */
-            }
-        #nav-button{
+            /* } */
+        /* #nav-button{
             top: 1.9vw;
             padding: 0.55vw 1.5vw 0.55vw 1.5vw;
             font-size: 2.1vw;
@@ -129,7 +126,7 @@
             font-weight: 550;
             border-radius: 2vw;
         }
-    }
+    } */
     /* .navbtns {
         font-size: 8vw;
         list-style-type: none;
@@ -151,4 +148,84 @@
         text-align: center;
         width: 100vw;
       } */
-    
+      #logo{
+        width: 12vw;
+        height: auto;
+    }
+    #hamburger{
+        display: none;
+    }
+      .navbar {
+        position: fixed;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        font-size: 1.4vw;
+        background-color: #f7fbfe;
+        z-index: 50;
+        padding: 0px 10px 0px 10px;
+        }
+        .openham{
+            display: none;
+        }
+        .logPop{
+            position: absolute;
+            top: 70%;
+            left: 41%;
+            padding: 1em 3em;
+            background-color:  #57b257;
+            color: white;
+            border-radius: 4em;
+        }
+        @media(max-width:680px){
+            #logo{
+                height: 25px;
+                width: 60px;
+            }
+            .openham{
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 10vw;
+            }
+            .closeham{
+                display: none;
+            }
+            #hamburger{
+                display: block;
+               margin-top: 6px;
+                width: 4vw;
+                height: auto;
+            }
+            .authbtn{
+                height: 15px;
+                gap: 0.5rem;
+                margin-top: 5px;
+            }
+            .badge{
+                width: 10px;
+                max-height: 10px;
+
+            }
+            .badge-q{
+                font-size: 5px;
+                padding-right: 0.15rem;
+                padding-left: 0.15rem;
+                margin-left:0.5rem;
+            }
+            #nav-button{
+                padding: 1px 5px 0px 5px;
+                border-radius: 10px;
+                font-size: 5px;
+            }
+            .logoutbtn{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-size: 7px;
+            }
+
+        }
