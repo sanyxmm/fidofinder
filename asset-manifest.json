@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/FidoFinder/static/css/main.ad86b3f2.css",
+    "main.js": "/FidoFinder/static/js/main.5dc0dbd4.js",
+    "static/media/Step-3-scaled.png": "/FidoFinder/static/media/Step-3-scaled.8cfa5b9ace38e7d04f4a.png",
+    "static/media/Step-4-scaled.png": "/FidoFinder/static/media/Step-4-scaled.ddf8e9b3b56f557a5c70.png",
+    "static/media/Step-1-scaled.png": "/FidoFinder/static/media/Step-1-scaled.32caca4713b96909447d.png",
+    "static/media/Step-2-scaled.png": "/FidoFinder/static/media/Step-2-scaled.9e60166ba5bd8e9477dd.png",
+    "static/media/pg1.jpeg": "/FidoFinder/static/media/pg1.0785cb3080bc799a9159.jpeg",
+    "static/media/dogyy.png": "/FidoFinder/static/media/dogyy.adc68ad96c6f4ada6af8.png",
+    "static/media/abt-section.png": "/FidoFinder/static/media/abt-section.dd7dfa78a0344c879f07.png",
+    "static/media/pexelsphoto3452072.jpeg": "/FidoFinder/static/media/pexelsphoto3452072.49ec5596fde54dc6886d.jpeg",
+    "static/media/b.jpg": "/FidoFinder/static/media/b.fcfef7eca2d7140d015d.jpg",
+    "static/media/animation-gif.gif": "/FidoFinder/static/media/animation-gif.f31e9d0499958833e3c1.gif",
+    "static/media/amnpreet.jpg": "/FidoFinder/static/media/amnpreet.47021edc7b38c4964be0.jpg",
+    "static/media/doggy.jpg": "/FidoFinder/static/media/doggy.2b3d9e0ab31587a3adfa.jpg",
+    "static/media/oggy.jpg": "/FidoFinder/static/media/oggy.2b3d9e0ab31587a3adfa.jpg",
+    "index.html": "/FidoFinder/index.html",
+    "main.ad86b3f2.css.map": "/FidoFinder/static/css/main.ad86b3f2.css.map",
+    "main.5dc0dbd4.js.map": "/FidoFinder/static/js/main.5dc0dbd4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad86b3f2.css",
+    "static/js/main.5dc0dbd4.js"
+  ]
+}
