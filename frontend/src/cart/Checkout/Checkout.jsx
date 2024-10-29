@@ -54,7 +54,7 @@ const Checkout = () => {
   const handlePlaceOrder = (e) => {
     console.log(orderData)
     e.preventDefault();
-    Axios.post("http://localhost:4000/placeOrder", orderData)
+    Axios.post("https://fidofinder.onrender.com/placeOrder", orderData)
     .then((response) => {
       navigate('/Findmydog');
       console.log(orderData);
