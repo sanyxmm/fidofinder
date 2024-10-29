@@ -416,7 +416,7 @@ const Navbar = () => {
   const [formData, setformData] = useState({});
   
   const handleLogout = () => {
-    Axios.post('http://localhost:4000/logout')
+    Axios.post('https://fidofinder.onrender.com/logout')
         .then(response => {
             if (response.data.status) {
                 dispatch(setlogin(false)); // Update the login state
@@ -433,7 +433,7 @@ const Navbar = () => {
 };
 
 useEffect(() => {
-  Axios.get(`http://localhost:4000/user-details`)
+  Axios.get(`https://fidofinder.onrender.com/user-details`)
     .then((response) => {
       const formData = response.data.user;
       setformData(formData);
