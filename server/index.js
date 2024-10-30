@@ -10,6 +10,7 @@ import { ProductRouter } from './routes/Product.route.js'
 
 const app = express()   //creating app
 dotenv.config()
+const port = process.env.PORT || 4000;
 // transfer fetched data from frontend in json format
 app.use(express.json())
 app.use(cors({
@@ -24,6 +25,6 @@ app.use(OrderRouter)
 //connection can be done in seperate file but we are doinfg it here
 mongoose.connect('mongodb://127.0.0.1:27017/authentication')
 
-app.listen(process.env.PORT,()=>{
+app.listen(port,()=>{
     console.log("Server is Running")
 })
