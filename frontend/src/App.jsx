@@ -15,7 +15,7 @@ import Shopping from "./cart/Shopping/Shopping";
 
 function App() {
   // loading animation
-  const [anima, setanima] = useState(false);
+  const [anima, setanima] = useState(true);
 
   useEffect(() => {
     // Set loading animation to false after 3 seconds

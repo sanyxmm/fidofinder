@@ -433,7 +433,7 @@ const Navbar = () => {
 };
 
 useEffect(() => {
-  Axios.get(`${url}/user-details`)
+  Axios.get(`http://localhost:4000/user-details`)
     .then((response) => {
       const formData = response.data.user;
       setformData(formData);

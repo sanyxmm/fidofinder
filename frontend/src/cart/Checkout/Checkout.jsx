@@ -74,7 +74,7 @@ const Checkout = () => {
 
 <div id='shipping-container'>
     
-<Link to="/Findmydog"><img src={require('../../assets/back-button (2).png')} className='absolute mt-4 ml-4 w-10' alt="" /></Link>
+<Link to="/FidoFinder"><img src={require('../../assets/back-button (2).png')} className='absolute mt-4 ml-4 w-10' alt="" /></Link>
 <div><br />
 <br /></div>
 
