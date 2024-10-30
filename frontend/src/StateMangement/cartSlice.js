@@ -7,7 +7,7 @@ const cartinitialState = {
     cartItems: [],
     shippingDetails:{},
     cartTotal:"",
-    url:"http://localhost:4000",
+    url:"https://fidofinder-api.vercel.app",
 };
 const cartSlice = createSlice({
     name: 'cart',
