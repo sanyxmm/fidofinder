@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(cors(
 {
 origin:["https://fidofinder-frontend.vercel.app"],
-methods:["POST","GET"],
+methods:["POST","GET","PATCH","PUT"],
 credentials:true
 }
 ));
