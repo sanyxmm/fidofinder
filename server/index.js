@@ -29,7 +29,12 @@ app.use(OrderRouter)
 
 // Serve the favicon.ico file
 app.get('/favicon.ico', (req, res) => {
-  res.sendFile(path.join(__dirname, 'favicon.ico'));
+  res.sendFile(path.join(__dirname, 'favicon.ico'), (err) => {
+    if (err) {
+      console.error("Error serving favicon:", err);
+      res.status(err.status || 500).send("Favicon not found");
+    }
+  });
 });
 
 //connection can be done in seperate file but we are doinfg it here
