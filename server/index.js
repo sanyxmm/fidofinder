@@ -7,6 +7,7 @@ import { AuthRouter } from './routes/auth.route.js'
 import {PetRouter} from './routes/pet.route.js'
 import { OrderRouter } from './routes/Order.route.js'
 import { ProductRouter } from './routes/Product.route.js'
+import path from 'path';
 
 const app = express()   //creating app
 dotenv.config()
