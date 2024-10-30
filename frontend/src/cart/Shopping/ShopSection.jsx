@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import ProductsCard from './ProductsCard';
+import { useSelector } from 'react-redux';
 import '../Shopping/ShopSection.css'
 const ShopSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [productsData,setproductsData] = useState([]);
+  const {url}  = useSelector((state) => state.cart);
+
   useEffect(()=>{
-    Axios.get(`http://localhost:4000/allProducts`)
+    Axios.get(`${url}/allProducts`)
     .then((response) => {
       const formData = response.data.products;
       setproductsData(formData)

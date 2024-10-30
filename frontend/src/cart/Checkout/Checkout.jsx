@@ -9,7 +9,7 @@ import {setaddtag, setshippingDetails} from '../../StateMangement/cartSlice';
 const Checkout = () => {
   const [error,setError] = useState("");
   const {addtag,petDetails}  = useSelector((state) => state.pawtag);
-  const { isCartOpen, cartItems,shippingDetails } = useSelector((state) => state.cart); 
+  const { isCartOpen, cartItems,shippingDetails ,url} = useSelector((state) => state.cart); 
   const cartTotal = cartItems.map(item => item.price * item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
   const navigate = useNavigate();
 
@@ -54,9 +54,9 @@ const Checkout = () => {
   const handlePlaceOrder = (e) => {
     console.log(orderData)
     e.preventDefault();
-    Axios.post("http://localhost:4000/placeOrder", orderData)
+    Axios.post(`${url}/placeOrder`, orderData)
     .then((response) => {
-      navigate('/Findmydog');
+      navigate('/FidoFinder');
       console.log(orderData);
       alert(response.data.message)
       setError(response.data.message);

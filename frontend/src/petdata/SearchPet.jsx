@@ -112,11 +112,12 @@ import './petdata.css'
 
 
 const SearchPet  = () => {
+  const {url}  = useSelector((state) => state.cart);
   const {code}  = useSelector((state) => state.pawtag);
  const dispatch = useDispatch();
   const [formData,setformData] =useState({});
   useEffect(()=>{
-    Axios.get(`http://localhost:4000/search-pet/${code}`)
+    Axios.get(`${url}/search-pet/${code}`)
     .then((response) => {
       const formData = response.data.pet;
       setformData(formData)

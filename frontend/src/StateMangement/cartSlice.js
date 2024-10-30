@@ -6,7 +6,8 @@ const cartinitialState = {
     isCheckoutOpen :false,
     cartItems: [],
     shippingDetails:{},
-    cartTotal:""
+    cartTotal:"",
+    url:"http://localhost:4000",
 };
 const cartSlice = createSlice({
     name: 'cart',
@@ -16,7 +17,6 @@ const cartSlice = createSlice({
         toggleCheckout(state, action) {state.isCheckoutOpen = action.payload},
         setshippingDetails(state, action) {state.shippingDetails = action.payload},
         setcartTotal(state, action) {state.cartTotal = action.payload},
-
         addItem(state, action) {
             const newItemId = action.payload._id;
             const existingItem = state.cartItems.find(item => item._id === newItemId);

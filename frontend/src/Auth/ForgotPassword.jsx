@@ -2,12 +2,13 @@ import React, { useState,useRef, useContext } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 import Axios from 'axios'
 import './Login.css';
-import { useDispatch} from 'react-redux';
+import { useDispatch,useSelector} from 'react-redux';
 import {setlogin,setforgot} from '../StateMangement/cartSlice';
 
 const ForgotPassword = () => {
   const dispatch = useDispatch();
     const [error, setError] = useState('');
+    const {url}  = useSelector((state) => state.cart);
     const [formData, setFormData] = useState({
       email: '',
   });
@@ -23,7 +24,7 @@ const ForgotPassword = () => {
     //axios is http request response library to go call our server side up
     //using post method to pass the data
     //here we write server side app url
-    Axios.post('http://localhost:4000/forgot-password',formData).then(response =>{
+    Axios.post(`${url}/forgot-password`,formData).then(response =>{
        
         if(response.data.status)
         setError("check ur email for saved password link")

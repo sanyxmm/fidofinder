@@ -405,7 +405,7 @@ import { toggleCart } from '../../StateMangement/cartSlice';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const { cartItems } = useSelector((state) => state.cart);
+  const { cartItems,url } = useSelector((state) => state.cart);
   const { navbtns } = useSelector((state) => state.auth);
   const { login,logout,signup,forgot,regPop,logPop,logchk} = useSelector((state) => state.auth);
   const {searchtag}  = useSelector((state) => state.pawtag);
@@ -416,7 +416,7 @@ const Navbar = () => {
   const [formData, setformData] = useState({});
   
   const handleLogout = () => {
-    Axios.post('http://localhost:4000/logout')
+    Axios.post(`${url}/logout` )
         .then(response => {
             if (response.data.status) {
                 dispatch(setlogin(false)); // Update the login state
@@ -433,7 +433,7 @@ const Navbar = () => {
 };
 
 useEffect(() => {
-  Axios.get(`http://localhost:4000/user-details`)
+  Axios.get(`${url}/user-details`)
     .then((response) => {
       const formData = response.data.user;
       setformData(formData);

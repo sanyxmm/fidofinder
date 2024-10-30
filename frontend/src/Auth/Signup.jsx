@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import "./Login.css";
 import Axios from 'axios'
 import OutsideClickHandler from "react-outside-click-handler";
-import { useDispatch} from 'react-redux';
+import { useDispatch,useSelector} from 'react-redux';
 import {setlogin,setsignup,setregPop} from '../StateMangement/cartSlice';
 const Signup = () => {
   const dispatch = useDispatch();
   const [error, setError] = useState("");
+  const {url}  = useSelector((state) => state.cart);
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -20,7 +21,7 @@ const handleSubmit = (e) => {
   //axios is http request response library to go call our server side up
   //using post method to pass the data
   //here we write server side app url
-  Axios.post('http://localhost:4000/signup',formData).then(response =>{
+  Axios.post(`${url}/signup`,formData).then(response =>{
     console.log(formData);
       if(response.data.status){
         dispatch(setsignup(true));
