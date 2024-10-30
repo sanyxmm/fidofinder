@@ -25,6 +25,12 @@ app.use(AuthRouter)
 app.use(PetRouter)
 app.use(ProductRouter)
 app.use(OrderRouter)
+
+// Serve the favicon.ico file
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname, 'favicon.ico'));
+});
+
 //connection can be done in seperate file but we are doinfg it here
 mongoose.connect('mongodb+srv://iamsanyamchoudhary:<fidofinder@123>@cluster0.4gwj4fk.mongodb.net/fidofinder?retryWrites=true&w=majority&appName=Cluster0')
 
