@@ -41,7 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://fidofinder-api.vercel.app",
+  "proxy": "https://fidofinder-tau.vercel.app/?vercelToolbarCode=UBUp54yKDNXr2in",
   "eslintConfig": {
     "extends": [
       "react-app",
