@@ -14,11 +14,12 @@ const port = process.env.PORT || 4000;
 // transfer fetched data from frontend in json format
 app.use(express.json())
 app.use(cors({
-origin:["https://fidofinder-frontend.vercel.app"],
-methods:["POST","GET","PATCH","PUT"],
-allowedHeaders: ["*"],
-credentials:true
-}))
+  origin: "https://fidofinder-frontend.vercel.app", // Frontend URL
+  methods: ["POST", "GET", "PATCH", "PUT", "OPTIONS"], // Include OPTIONS for preflight
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"], // Explicitly allow necessary headers
+}));
+
 app.use(cookieParser())
 app.use(AuthRouter)
 app.use(PetRouter)
