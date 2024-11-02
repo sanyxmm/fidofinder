@@ -30,7 +30,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-    <Route path ="/FidoFinder" element={      
+    <Route path ="/" element={      
        <div>
        <div className="App">{anima ?
          <div id="snuf"><img src={animation} width="300px" height="300px"></img></div>:
