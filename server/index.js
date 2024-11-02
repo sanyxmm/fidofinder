@@ -1,10 +1,3 @@
-iamsanyamchoudhary
-A5vIIggw3uTA83tz
-
-
-
-
-
 import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
