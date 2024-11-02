@@ -1,9 +1,9 @@
 {
-  "version":2,
-  "builds":[
-    {"src" : "*.js", "use":"@vercel/node"}
+  "version": 2,
+  "builds": [
+    { "src": "*.js", "use": "@vercel/node" }
   ],
- "headers": [
+  "headers": [
     {
       "source": "/(.*)",
       "headers": [
@@ -13,11 +13,11 @@
         { "key": "Access-Control-Allow-Credentials", "value": "true" }
       ]
     }
-  ]
-  "routes":[
+  ],
+  "routes": [
     {
-      "src":"/(.*)",
-      "dest":"/"
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
