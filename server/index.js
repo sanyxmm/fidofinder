@@ -35,6 +35,6 @@ mongoose.connect('mongodb+srv://iamsanyamchoudhary:<fidofinder@123>@cluster0.4gw
 app.get("/",(req,res)=>{
   res.json("Hello")
 })
-app.listen(port,()=>{
+app.listen(4000,()=>{
     console.log("Server is Running")
 })
