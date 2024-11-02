@@ -16,6 +16,7 @@ app.use(express.json())
 app.use(cors({
 origin:["https://fidofinder-frontend.vercel.app"],
 methods:["POST","GET","PATCH","PUT"],
+allowedHeaders: ["*"],
 credentials:true
 }))
 app.use(cookieParser())
@@ -25,7 +26,15 @@ app.use(ProductRouter)
 app.use(OrderRouter)
 
 //connection can be done in seperate file but we are doinfg it here
-mongoose.connect('mongodb+srv://iamsanyamchoudhary:A5vIIggw3uTA83tz@fido.q9zue.mongodb.net/Ffido?retryWrites=true&w=majority&appName=fido')
+mongoose.connect('mongodb+srv://iamsanyamchoudhary:A5vIIggw3uTA83tz@fido.q9zue.mongodb.net/Ffido?retryWrites=true&w=majority&appName=fido', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log("Connected to MongoDB");
+}).catch((err) => {
+  console.error("Error connecting to MongoDB", err);
+});
+
 app.get("/",(req,res)=>{
   res.json("Hello")
 })
