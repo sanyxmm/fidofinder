@@ -14,7 +14,7 @@ const port = process.env.PORT || 4000;
 // transfer fetched data from frontend in json format
 app.use(express.json())
 app.use(cors({
-origin:["https://fidofinder-frontend.vercel.app/FidoFinder"],
+origin:["https://fidofinder-frontend.vercel.app"],
 methods:["POST","GET","PATCH","PUT"],
 credentials:true
 }))
