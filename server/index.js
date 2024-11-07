@@ -12,12 +12,16 @@ const app = express()   //creating app
 dotenv.config()
 const port = process.env.PORT || 4000;
 // transfer fetched data from frontend in json format
-const corsOptions = {
-  origin: "https://fidofinder-frontend.vercel.app",  // Allowed origin
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],  // Allowed methods, including OPTIONS
-  allowedHeaders: ["Content-Type", "Authorization"],  // Explicitly allowed headers
-  credentials: true  // Allow cookies if needed
-};
+// const corsOptions = {
+//   origin: "https://fidofinder-frontend.vercel.app",  // Allowed origin
+//   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],  // Allowed methods, including OPTIONS
+//   allowedHeaders: ["Content-Type", "Authorization"],  // Explicitly allowed headers
+//   credentials: true  // Allow cookies if needed
+// };
+app.use(cors({
+origin:["http://localhost:3000"],
+credentials:true
+}))
 
 app.options('*', cors(corsOptions));
 app.use(express.json())
