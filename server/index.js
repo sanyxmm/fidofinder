@@ -18,12 +18,12 @@ const port = process.env.PORT || 4000;
 //   allowedHeaders: ["Content-Type", "Authorization"],  // Explicitly allowed headers
 //   credentials: true  // Allow cookies if needed
 // };
-app.use(cors({
-origin:["http://localhost:3000"],
-credentials:true
-}))
+// app.use(cors({
+// origin:["http://localhost:3000"],
+// credentials:true
+// }))
 
-app.options('*', cors(corsOptions));
+// app.options('*', cors(corsOptions));
 app.use(express.json())
 app.use(cookieParser())
 
