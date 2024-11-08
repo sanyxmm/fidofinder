@@ -1,12 +1,12 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import mongoose from 'mongoose'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import { AuthRouter } from './routes/auth.route.js'
 import {PetRouter} from './routes/pet.route.js'
 import { OrderRouter } from './routes/Order.route.js'
 import { ProductRouter } from './routes/Product.route.js'
+import dbConnect from './db/dbconnect.js'
 
 const app = express()   //creating app
 dotenv.config()
@@ -23,7 +23,7 @@ app.use(PetRouter)
 app.use(ProductRouter)
 app.use(OrderRouter)
 //connection can be done in seperate file but we are doinfg it here
-mongoose.connect('mongodb://127.0.0.1:27017/authentication')
+dbConnect();
 
 app.listen(port,()=>{
     console.log("Server is Running")

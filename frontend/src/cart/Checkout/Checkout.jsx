@@ -56,7 +56,7 @@ const Checkout = () => {
     e.preventDefault();
     Axios.post(`${url}/placeOrder`, orderData)
     .then((response) => {
-      navigate('/FidoFinder');
+      navigate('/');
       console.log(orderData);
       alert(response.data.message)
       setError(response.data.message);
@@ -74,7 +74,7 @@ const Checkout = () => {
 
 <div id='shipping-container'>
     
-<Link to="/FidoFinder"><img src={require('../../assets/back-button (2).png')} className='absolute mt-4 ml-4 w-10' alt="" /></Link>
+<Link to="/"><img src={require('../../assets/back-button (2).png')} className='absolute mt-4 ml-4 w-10' alt="" /></Link>
 <div><br />
 <br /></div>
 
