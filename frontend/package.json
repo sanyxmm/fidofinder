@@ -41,7 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://fidofinder-tau.vercel.app",
+  "proxy": "https://fidofinder-1.onrender.com",
   "eslintConfig": {
     "extends": [
       "react-app",

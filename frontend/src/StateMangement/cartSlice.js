@@ -7,7 +7,7 @@ const cartinitialState = {
     cartItems: [],
     shippingDetails:{},
     cartTotal:"",
-    url:"https://fidofinder.onrender.com",
+    url:"https://fidofinder-1.onrender.com",
 };
 const cartSlice = createSlice({
     name: 'cart',
