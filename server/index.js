@@ -29,4 +29,3 @@ dbConnect();
 app.listen(port,()=>{
     console.log("Server is Running")
 })
-git commit -m "origin added"
