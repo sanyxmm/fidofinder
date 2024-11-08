@@ -1,5 +1,4 @@
 {
-  "homepage": "https://sanyxmm.github.io/FidoFinder",
   "name": "example-app",
   "version": "0.1.0",
   "private": true,
@@ -42,7 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "https://fidofinder-tau.vercel.app",
   "eslintConfig": {
     "extends": [
       "react-app",
