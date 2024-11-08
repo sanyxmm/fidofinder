@@ -32,7 +32,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    // "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "react-scripts start --openssl-legacy-provider --host 0.0.0.0 --disable-host-check",
     "server": "cd ../server && npm run dev",
     "client": "react-scripts start --openssl-legacy-provider",
     "predeploy": "npm run build",
