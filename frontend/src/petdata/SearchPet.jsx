@@ -109,7 +109,7 @@ import { setsearchtag } from '../StateMangement/cartSlice'
 import { useDispatch , useSelector } from "react-redux";
 import Axios from 'axios';
 import './petdata.css'
-
+import '../Auth/Login.css'
 
 const SearchPet  = () => {
   const {url}  = useSelector((state) => state.cart);
@@ -138,7 +138,7 @@ const SearchPet  = () => {
     </div> // Or any loading/error message you prefer
   }
   return (
-  <div className="flex justify-center items-center h-screen w-screen absolute left-0 top-0 bg-auto backdrop-blur-[4px]">
+  <div className='login-container'>
     <OutsideClickHandler  onOutsideClick={() =>{ dispatch(setsearchtag(false));setformData({})}}>
        <form className="relative border border-gray-300 rounded-md shadow-md backdrop-blur-sm form-container" >
        <img onClick={() => dispatch(setsearchtag(false))} src={require('../assets/icons8-go-back-48.png')} className='absolute mt-[-12px] ml-[-8px] w-[1.5rem]' alt="" />
