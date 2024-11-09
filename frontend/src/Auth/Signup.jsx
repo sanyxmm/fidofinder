@@ -24,7 +24,7 @@ const handleSubmit = (e) => {
   Axios.post(`${url}/signup`,formData).then(response =>{
     console.log(formData);
       if(response.data.status){
-        dispatch(setsignup(true));
+        dispatch(setsignup(false));
         dispatch(setlogin(true));
         dispatch(setregPop(true));
       }
