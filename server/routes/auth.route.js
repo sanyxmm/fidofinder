@@ -38,7 +38,12 @@ router.post('/login',async(req,res)=>{
         return res.json({message:"passwrod is incorrect"})
     }
     const token = jwt.sign({id:user._id},process.env.KEY,{expiresIn:'1hr'})
-    res.cookie('token',token,{httpOnly:true,maxAge:360000})
+   res.cookie('token', token, {
+  httpOnly: true, // Prevents JavaScript from accessing the token
+  secure: process.env.NODE_ENV === 'production', // Only send cookies over HTTPS in production
+  maxAge: 3600000, // 1 hour
+  sameSite: 'None' // Required for cross-origin requests (e.g., in production)
+});
     return res.json({status:true,message:"login succesfully"})
 })
 router.post('/logout', (req, res) => {
