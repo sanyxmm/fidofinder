@@ -7,6 +7,8 @@ import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
 import { authenticate } from "../middleware/authenticate.js";
 dotenv.config()
+
+//signup
 router.post('/signup',async (req,res) =>{
     const {username,email,password} =req.body;
     const user  = await User.findOne({email})
@@ -27,6 +29,8 @@ router.post('/signup',async (req,res) =>{
     await newUser.save();
     return res.json({status:true, message:"record Registered"})
 })
+
+//login
 router.post('/login',async(req,res)=>{
     const{email,password} = req.body;
     const user = await User.findOne({email})
@@ -46,10 +50,14 @@ router.post('/login',async(req,res)=>{
 });
     return res.json({status:true,message:"login succesfully"})
 })
+
+//logout
 router.post('/logout', (req, res) => {
   res.clearCookie('token'); // Clear the cookie
   return res.json({ status: true, message: "Logged out successfully" });
 });
+
+//forgot password
 router.post('/forgot-password',async(req,res)=>{
     const{email} = req.body; 
     try{
@@ -72,7 +80,7 @@ router.post('/forgot-password',async(req,res)=>{
           from: 'iamsanyamchoudhary@gmail.com',
           to: email,
           subject: 'Reset Password',
-          text: `http://localhost:5173/resetPassword/${token}`
+          text: `https://fidofinder-frontend.vercel.app/reset-password/${token}`
         };
         
         transporter.sendMail(mailOptions, function(error, info){
@@ -88,6 +96,8 @@ router.post('/forgot-password',async(req,res)=>{
         console.log(err)
     } 
 })   
+
+//reset password
 router.post('/reset-password/:token',async(req,res)=>{
   const {token} = req.params;
   const {password} = req.body;
@@ -103,6 +113,8 @@ router.post('/reset-password/:token',async(req,res)=>{
     return res.json({message:"invalid token"})
   }
 })
+
+//fetch user details
 router.get("/user-details",authenticate, async (req, res) => {
   try {
     const username = req.user.username;
@@ -118,4 +130,6 @@ router.get("/user-details",authenticate, async (req, res) => {
     res.status(500).json({ error: "user search failed" });
   }
 });
+
+
 export {router as AuthRouter}

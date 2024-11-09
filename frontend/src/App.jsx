@@ -12,6 +12,7 @@ import Quote from "./Pages/Quote/Quote";
 import {  BrowserRouter,Routes,Route  } from "react-router-dom";
 import Checkout from "./cart/Checkout/Checkout";
 import Shopping from "./cart/Shopping/Shopping";
+import ResetPassword from "./Auth/ResetPassword";
 
 function App() {
   // loading animation
@@ -52,6 +53,7 @@ function App() {
      </div>
         }></Route>
     <Route path ="/shipping" element={<Checkout/>}></Route>
+    <Route path="/reset-password/:token" element={<ResetPassword/>}></Route>
     </Routes>    
       </BrowserRouter>
   );
