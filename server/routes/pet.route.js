@@ -45,8 +45,8 @@ router.post("/add-pet/", authenticate, async (req, res) => {
 
 router.get("/search-pet/:payloadId", async (req, res) => {
   try {
-    const userId = req.params.payloadId;
-    const pet = await Pet.findOne({ userId });
+    const _id = req.params.payloadId;
+    const pet = await Pet.findOne({ _id });
     console.log(pet);
     if (!pet) {
       return res.status(404).json({ error: "Pet not found" });
