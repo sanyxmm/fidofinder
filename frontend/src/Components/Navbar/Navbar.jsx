@@ -34,6 +34,7 @@ const Navbar = () => {
             } else {
                 console.log('Logout failed');
             }
+          document.cookie = 'token=; Max-Age=0';
         })
         .catch(error => {
             console.error('Error during logout:', error);
