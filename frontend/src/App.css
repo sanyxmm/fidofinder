@@ -4,6 +4,10 @@
     color: rgb(21, 22, 22);
     overflow-x:hidden ;
 }
+::-webkit-scrollbar {
+    display: none;
+  }
+
 #snuf{
     display:flex;
     align-items:center;
