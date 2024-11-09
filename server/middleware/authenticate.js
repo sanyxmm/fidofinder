@@ -5,13 +5,11 @@ dotenv.config()
 const authenticate = async(req, res, next) => {
   try {
 
-      console.log("Body", req.body.token);
-      console.log("Cookies", req.cookies.token);
-      console.log("Header", req.header("authorization"));
+      // console.log("Body", req.body.token);
+      // console.log("Cookies", req.cookies.token);
+      // console.log("Header", req.header("authorization"));
 
-      const token = req.body.token || req.cookies.token ||  (req.headers['authorization'] && req.headers['authorization'].startsWith('Bearer ')
-      ? req.headers['authorization'].split(' ')[1]
-      : null);
+      const token = req.body.token || req.cookies.token ;
 
       if(!token || token === undefined) {
           return res.status(401).json({
