@@ -21,7 +21,17 @@ const ResetPassword = () => {
     //axios is http request response library to go call our server side up
     //using post method to pass the data
     //here we write server side app url
-    Axios.post(`${url}/reset-password`,formData).then(response =>{
+
+
+    const token = window.location.pathname.split('/')[2];  // Extract token from URL path
+
+    // Make sure the token is available before sending the request
+    if (!token) {
+        setError("Invalid token.");
+        return;
+    }
+
+    Axios.post(`${url}/reset-password/${token}`,formData).then(response =>{
        
         if(response.data.status)
         setError("Password changed Succefully")
