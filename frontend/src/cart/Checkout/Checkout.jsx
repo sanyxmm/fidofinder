@@ -4,7 +4,7 @@ import './Checkout.css'
 import { Link, useNavigate } from 'react-router-dom';
 import AddPet from '../../petdata/add-pet';
 import { useDispatch, useSelector } from 'react-redux';
-import {setaddtag, setshippingDetails} from '../../StateMangement/cartSlice';
+import {setaddtag, setshippingDetails,clearCart} from '../../StateMangement/cartSlice';
 
 const Checkout = () => {
   const [error,setError] = useState("");
@@ -59,6 +59,7 @@ const Checkout = () => {
       withCredentials: true // This ensures cookies are sent with the request
     })
     .then((response) => {
+      dispatch(clearCart());
       navigate('/');
       console.log(orderData);
       alert(response.data.message)

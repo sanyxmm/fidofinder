@@ -51,8 +51,10 @@ const cartSlice = createSlice({
                 }
                 return item;
             }).filter(item => item.quantity !== 0);
+        },
+        clearCart(state) {
+            state.cartItems = [];
         }
-
     }
 });
 
@@ -104,7 +106,7 @@ const pawSlice = createSlice({
 })
 
 
-export const { toggleCart,toggleCheckout, addItem, removeItem, incrementItem, decrementItem ,setshippingDetails,setcartTotal} = cartSlice.actions;
+export const { toggleCart,toggleCheckout, addItem, removeItem, incrementItem, decrementItem ,setshippingDetails,setcartTotal,clearCart} = cartSlice.actions;
 export const {setlogin,setsignup,setforgot,setreset,setlogchk,setlogPop,setlogoutpop,setregPop,setNav} =authSlice.actions;
 export const {setpetData,setpetDetails,setcode,setaddtag,setsearchtag}=pawSlice.actions;
 
