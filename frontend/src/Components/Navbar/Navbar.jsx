@@ -280,7 +280,7 @@ const Navbar = () => {
  <div className="flex flex-row mt-[17px] gap-4 h-[30px]  authbtn">
        
  <div title="Cart" className="flex flex-row gap-5" onClick={() => dispatch(toggleCart(true)) }>
-       <span className="badge-q absolute ml-4 bg-blue-400 text-[white] rounded-full  pr-1 pl-1 text-[10px] z-50 font-bold">{cartQuantity}</span>
+       <span className="badge-q absolute ml-4 bg-blue-400 text-[white] rounded-full  pr-1 pl-1 text-[10px] z-10 font-bold">{cartQuantity}</span>
        <img src={`${process.env.PUBLIC_URL}/images/online-shopping.png`}  className="badge relative z-0 w-[24px] max-h-[24px] mt-[2px] " alt="bag-icon" />                       
  </div>
  {logchk ? (

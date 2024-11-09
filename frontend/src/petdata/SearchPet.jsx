@@ -131,7 +131,7 @@ const SearchPet  = () => {
 
 
   if (!formData || Object.keys(formData).length === 0) {
-    return <div className="flex justify-center items-center h-screen w-screen absolute left-0 top-0 bg-auto backdrop-blur-[4px] ">
+    return <div className='login-container'>
     <OutsideClickHandler   onOutsideClick={() =>{ dispatch(setsearchtag(false));setformData({})}}>
     <div className=' rounded-md bg-white shadow-md p-10 findpet'>Pet Not Found</div>
     </OutsideClickHandler>
