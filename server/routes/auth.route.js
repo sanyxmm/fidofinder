@@ -40,7 +40,7 @@ router.post('/login',async(req,res)=>{
     const token = jwt.sign({id:user._id},process.env.KEY,{expiresIn:'1hr'})
    res.cookie('token', token, {
   httpOnly: true, // Prevents JavaScript from accessing the token
-  secure:  true,, // Only send cookies over HTTPS 
+  secure:  true, // Only send cookies over HTTPS 
   maxAge: 360000, // 
   sameSite: 'None' // Required for cross-origin requests (e.g., in production)
 });
