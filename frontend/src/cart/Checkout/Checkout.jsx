@@ -54,7 +54,9 @@ const Checkout = () => {
   const handlePlaceOrder = (e) => {
     console.log(orderData)
     e.preventDefault();
-    Axios.post(`${url}/placeOrder`, orderData)
+    Axios.post(`${url}/placeOrder`, orderData, {
+    withCredentials: true  // Make sure credentials (cookies) are sent with each request
+  })
     .then((response) => {
       navigate('/');
       console.log(orderData);
