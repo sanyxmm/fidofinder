@@ -110,14 +110,18 @@ import { useDispatch , useSelector } from "react-redux";
 import Axios from 'axios';
 import './petdata.css'
 import '../Auth/Login.css'
+import { useLocation } from "react-router-dom";
 
 const SearchPet  = () => {
   const {url}  = useSelector((state) => state.cart);
-  const {code}  = useSelector((state) => state.pawtag);
  const dispatch = useDispatch();
+ const location = useLocation();
+ const queryParams = new URLSearchParams(location.search);
+ const petId = queryParams.get("petId");
   const [formData,setformData] =useState({});
+  
   useEffect(()=>{
-    Axios.get(`${url}/search-pet/${code}`)
+    Axios.get(`${url}/search-pet/${petId}`)
     .then((response) => {
       const formData = response.data.pet;
       setformData(formData)

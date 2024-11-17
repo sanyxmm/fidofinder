@@ -13,6 +13,7 @@ import {  BrowserRouter,Routes,Route  } from "react-router-dom";
 import Checkout from "./cart/Checkout/Checkout";
 import Shopping from "./cart/Shopping/Shopping";
 import ResetPassword from "./Auth/ResetPassword";
+import SearchPet from "./petdata/SearchPet";
 
 function App() {
   // loading animation
@@ -52,6 +53,7 @@ function App() {
        </div>
      </div>
         }></Route>
+             <Route path="/profile/:userId" element={<SearchPet/>} />
     <Route path ="/shipping" element={<Checkout/>}></Route>
     <Route path="/reset-password/:token" element={<ResetPassword/>}></Route>
     </Routes>    

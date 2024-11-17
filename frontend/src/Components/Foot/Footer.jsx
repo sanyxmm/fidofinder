@@ -1,5 +1,7 @@
 import React from 'react'
 import './Footer.css'
+import amor from './Screenshot 2024-11-10 213441.png'
+import vector from './Screenshot 2024-11-10 213933.png'
 const Footer = () => {
   return (
  <div>
@@ -81,5 +83,6 @@ const Footer = () => {
    
   )
 }
+
 
 export default Footer
