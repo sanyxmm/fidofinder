@@ -9,11 +9,30 @@ import Working from "./Pages/Working/Working";
 import animation from './assets/animation-gif.gif';
 import './App.css';
 import Quote from "./Pages/Quote/Quote";
-import {  BrowserRouter,Routes,Route  } from "react-router-dom";
+import {  BrowserRouter,Routes,Route, useSearchParams  } from "react-router-dom";
 import Checkout from "./cart/Checkout/Checkout";
 import Shopping from "./cart/Shopping/Shopping";
 import ResetPassword from "./Auth/ResetPassword";
 import SearchPet from "./petdata/SearchPet";
+import { useDispatch } from "react-redux";
+import { setsearchtag} from './StateMangement/cartSlice'
+
+
+function CheckPetId() {
+  const [searchParams] = useSearchParams();
+  const dispatch = useDispatch();
+  const petId = searchParams.get('petId');
+
+  useEffect(() => {
+    if (petId) {
+      dispatch(setsearchtag(true));
+      console.log(`Pet ID found in URL: ${petId}`);
+    }
+  }, [petId, dispatch]);
+
+  return null; // This component doesn't render anything
+}
+
 
 function App() {
   // loading animation
@@ -31,6 +50,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <CheckPetId />
     <Routes>
     <Route path ="/" element={      
        <div>
@@ -60,5 +80,6 @@ function App() {
       </BrowserRouter>
   );
 }
+
 
 export default App;

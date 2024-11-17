@@ -121,6 +121,7 @@ const SearchPet  = () => {
   const [formData,setformData] =useState({});
   
   useEffect(()=>{
+  if(petId){
     Axios.get(`${url}/search-pet/${petId}`)
     .then((response) => {
       const formData = response.data.pet;
@@ -129,8 +130,9 @@ const SearchPet  = () => {
     .catch((err) => {
       console.log(err);
     });
+  }
 
-  },[]);
+  },[petId]);
   
 
 
