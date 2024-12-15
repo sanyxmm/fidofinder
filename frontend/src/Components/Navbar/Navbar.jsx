@@ -74,7 +74,7 @@ const Navbar = () => {
       <div className="flex flex-col items-center">
       <img id="hamburger" onClick={()=>dispatch(setNav(!navbtns))} src={require("../../assets/menu-button.png")} alt="" />
       {
-        navbtns && <ul className="openham flex flex-row gap-5">
+        navbtns && <ul className="openham flex flex-row gap-2">
         <li>
           {" "}
           <Link
