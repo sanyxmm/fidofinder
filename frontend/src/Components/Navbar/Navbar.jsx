@@ -73,7 +73,7 @@ const Navbar = () => {
 
       <div className="flex flex-col items-center">
       <img id="hamburger" onClick={()=>dispatch(setNav(!navbtns))} src={require("../../assets/menu-button.png")} alt="" />
-      {
+     {
         navbtns && <ul className="openham flex flex-row gap-2">
         <li>
           {" "}
@@ -115,24 +115,9 @@ const Navbar = () => {
             activeClass="active"
             smooth
             spy
-            to="RegisterPet"
+            to="Shop"
           >
-            RegisterPet
-          </Link>
-        </li>
-        <li>
-          {" "}
-          <Link
-            id="text"
-            onClick={() => {
-              dispatch(setNav(false));
-            }}
-            activeClass="active"
-            smooth
-            spy
-            to="Help"
-          >
-            Help
+            Shop
           </Link>
         </li>
         <li>
@@ -162,7 +147,7 @@ const Navbar = () => {
             spy
             to="Aboutus"
           >
-            About us
+            Contact us
           </Link>
         </li>
       </ul>
