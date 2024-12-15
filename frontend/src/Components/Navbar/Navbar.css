@@ -184,12 +184,12 @@
                 width: 60px;
             }
             .openham{
-                height: 100vh;
+                height: 20vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                font-size: 10vw;
+                font-size: 3vw;
             }
             .closeham{
                 display: none;
