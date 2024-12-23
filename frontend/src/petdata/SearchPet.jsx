@@ -63,7 +63,12 @@ if(loading){
       </div>
 
        </div>
-     <a href={`tel:${formData.contact}`}> <button class="rounded-[8px] bg-[#3498db] text-[12px] font-[700] mt-[10px] p-[10px] w-full text-white">Call my Parent</button></a>
+   <a
+  href={`tel:${formData.contact}`}
+  className="rounded-[8px] bg-[#3498db] text-[12px] font-[700] mt-[10px] p-[10px] w-full text-white block text-center"
+>
+  Call my Parent
+</a>
       </div>
       <label htmlFor="" className="text-[13px]"><strong>About {formData.parentName}</strong></label>
       <br />
