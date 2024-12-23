@@ -21,7 +21,7 @@ const SearchPet  = () => {
     setLoading(true);
     Axios.get(`${url}/search-pet/${petId}`)
     .then((response) => {
-      const formData = response.data.pet;
+      const formData = response.data.petDetails;
       setformData(formData);
       setLoading(false);
     })
