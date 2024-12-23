@@ -83,6 +83,14 @@ const AddPet = () => {
                   placeholder="EmailAddress"
                 />
                 <br />
+                  <input required
+                  name="contact"
+                  value={formData.contact}
+                  type="contact"
+                  onChange={handleChange}
+                  placeholder="contact"
+                />
+                <br />
               </div>
             </div>
            
