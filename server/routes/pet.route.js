@@ -51,7 +51,7 @@ router.get("/search-pet/:payloadId", async (req, res) => {
     if (!pet) {
       return res.status(404).json({ error: "Pet not found" });
     }
-    res.status(200).json({ pet.petDetails });
+    res.status(200).json({petDetails: pet.petDetails });
   } catch (error) {
     res.status(500).json({ error: "Pet search failed" });
   }
