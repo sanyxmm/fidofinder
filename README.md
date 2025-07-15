@@ -110,9 +110,6 @@ We welcome contributions to improve PawQuest! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
@@ -122,11 +119,6 @@ If you encounter any issues or have questions:
 2. Create a new issue with detailed information
 3. Contact our support team through the website
 
-## 🌟 Acknowledgments
-
-- Pet owners who trust our platform
-- Community members who help reunite pets with their families
-- Contributors who help improve the platform
 
 ## 📞 Contact
 
@@ -136,7 +128,6 @@ Website: [https://fidofinder-frontend.vercel.app/]
 Email: sanyamchoudhary726@gmail.com
 Phone: +91-XXXXXXXXXX
 ```
-
 ---
 
 **Made with ❤️ for pets and their families**
