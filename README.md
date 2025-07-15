@@ -215,7 +215,7 @@ If you encounter any issues or have questions:
 
 For business inquiries or support:
 ```
-Website: [[Your Website URL]](https://fidofinder-frontend.vercel.app/)
+Website: [https://fidofinder-frontend.vercel.app/]
 Email: sanyamchoudhary726@gmail.com
 Phone: +91-XXXXXXXXXX
 ```
