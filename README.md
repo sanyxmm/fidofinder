@@ -32,7 +32,7 @@ PawQuest is a comprehensive web application designed to help reunite lost pets w
 ## 📱 How It Works
 
 ### Step 1: Register Tag
-- Pet owners scan the QR code on their pet's tag using their phone
+- on signup while placing a order for a pet tag after after adding shipping address just before the payment they
 - Enter pet name and contact information
 - Complete pet profile with detailed information
 
