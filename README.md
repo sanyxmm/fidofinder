@@ -1,7 +1,7 @@
 
-# PawQuest - Lost Pet Finder Application
+# Fido-Finder - Lost Pet Finder Application
 
-## 🐾 About PawQuest
+## 🐾 About FidoFinder
 
 PawQuest is a comprehensive web application designed to help reunite lost pets with their owners through an innovative QR code tag system. Built with the MERN stack, this platform provides a seamless experience for pet owners to register their pets and for good Samaritans to help lost pets find their way home.
 
