@@ -134,4 +134,9 @@ Phone: +91-XXXXXXXXXX
 
 *"Bringing lost pets safely back home, one scan at a time."*
 Scan this Qr Code of a lost pet to get pet owner details
+https://fidofinder-frontend.vercel.app/?petId=672dd3215563d5dc00c3a122
+
 ![Scan me Qr Tag](https://github.com/user-attachments/assets/54bd850b-fe23-4082-b88a-6cf553739c62)
+
+![Screenshot_20250927_182612_Chrome](https://github.com/user-attachments/assets/cf58c0ca-dcf4-4b25-ab7e-cd49b999ee21)
+
